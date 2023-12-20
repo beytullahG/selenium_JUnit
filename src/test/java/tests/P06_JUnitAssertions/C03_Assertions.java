@@ -31,5 +31,10 @@ public class C03_Assertions {
 
         Assert.assertTrue(actualUrl.contains("testotomasyonu")); // PASSED
 
+        // Test if the URL does not contain wisequarter
+
+        Assert.assertFalse(actualUrl.contains("wisequarter"));  // PASSED
+
+
     }
 }
