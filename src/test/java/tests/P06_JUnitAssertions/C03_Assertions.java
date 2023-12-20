@@ -35,6 +35,13 @@ public class C03_Assertions {
 
         Assert.assertFalse(actualUrl.contains("wisequarter"));  // PASSED
 
+        // Test if the URL is https://testotomasyonu.com/
+
+        Assert.assertEquals("https://testotomasyonu.com/", actualUrl); // PASSED
+
+        Assert.assertTrue("https://testotomasyonu.com/".equals(actualUrl)); // PASSED
+        //'assertTrue()' can be simplified to 'assertEquals()'
+
 
     }
 }
