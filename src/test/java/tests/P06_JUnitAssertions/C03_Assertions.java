@@ -6,7 +6,7 @@ import org.junit.Test;
 public class C03_Assertions {
 
     @Test
-    public void test01(){
+    public void test01() {
 
         // Let the retirement age be 65
 
@@ -16,8 +16,8 @@ public class C03_Assertions {
 
         Assert.assertTrue(age > 65); // test passed
 
-        int number1 = 20 ;
-        int number2 = 30 ;
+        int number1 = 20;
+        int number2 = 30;
 
         // Assert.assertTrue(number1 > number2); // FAILED
 
@@ -42,6 +42,10 @@ public class C03_Assertions {
         Assert.assertTrue("https://testotomasyonu.com/".equals(actualUrl)); // PASSED
         //'assertTrue()' can be simplified to 'assertEquals()'
 
+        // Test if the URL is not https://www.testotomasyonu.com/
 
+        Assert.assertNotEquals("https://www.testotomasyonu.com/", actualUrl); // PASSED
+
+        Assert.assertFalse("https://www.testotomasyonu.com/".equals(actualUrl)); // PASSED
     }
 }
