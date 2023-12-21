@@ -47,6 +47,15 @@ public class C04_Assertions {
         Assert.assertEquals(expectedUrl, actualUrl);
     }
 
+    @Test
+    public void titleTest(){
+        //		○ Test if the page title does not contain "Rest"
+
+        String unexpectedContent = "Rest";
+        String actualTitle = driver.getTitle();
+
+        Assert.assertFalse(actualTitle.contains(unexpectedContent));
+    }
 
 
 }
