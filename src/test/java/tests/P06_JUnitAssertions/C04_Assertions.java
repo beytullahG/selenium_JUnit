@@ -58,4 +58,14 @@ public class C04_Assertions {
     }
 
 
+    @Test
+    public void logoTest(){
+        //		○ Test if the BestBuy logo is displayed
+        WebElement logoElement = driver.findElement(By.xpath("(//img[@class='logo'])[1]"));
+
+        Assert.assertTrue(logoElement.isDisplayed());
+
+    }
+
+
 }
