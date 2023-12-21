@@ -66,6 +66,14 @@ public class C04_Assertions {
         Assert.assertTrue(logoElement.isDisplayed());
 
     }
+    @Test
+    public void francaisLinkTest(){
+        //		○ Test if the French link is displayed
+
+        WebElement francaisLinkElement = driver.findElement(By.xpath("//*[text()='Français']"));
+
+        Assert.assertTrue(francaisLinkElement.isDisplayed());
+    }
 
 
 }
