@@ -53,6 +53,11 @@ public class C05_Assertions {
 
         Assert.assertFalse(actualTitle.contains(unexpectedContent));
 
+        //		○ Test if the BestBuy logo is displayed
+        WebElement logoElement = driver.findElement(By.xpath("(//img[@class='logo'])[1]"));
+
+        Assert.assertTrue(logoElement.isDisplayed());
+
 
     }
 
