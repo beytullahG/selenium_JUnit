@@ -37,4 +37,16 @@ public class C05_Assertions {
         driver.quit();
     }
 
+    @Test
+    public void bestBuyTest(){
+        //		○ Test if the page URL is equal to https://www.bestbuy.com/
+
+        String expectedUrl = "https://www.bestbuy.com/";
+        String actualUrl = driver.getCurrentUrl();
+
+        Assert.assertEquals(expectedUrl, actualUrl);
+
+
+    }
+
 }
