@@ -32,4 +32,9 @@ public class C05_Assertions {
         driver.get("https://www.bestbuy.com/");
     }
 
+    @AfterClass
+    public static void teardown(){
+        driver.quit();
+    }
+
 }
