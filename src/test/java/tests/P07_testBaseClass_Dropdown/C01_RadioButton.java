@@ -50,4 +50,22 @@ public class C01_RadioButton {
         Assert.assertFalse(otherRadioButton.isSelected());
         ReusableMethods.wait(2);
     }
+
+    @Test
+    public void radioButtonTextTest(){
+        //	a. Go to the given web page: https://testotomasyonu.com/form
+        driver.get("https://testotomasyonu.com/form");
+        //	b. Locate the Gender Radio button elements and
+        //     click on the text to select the one that suits you
+
+        // I can make the selection with the text,
+        // but I need radio buttons for assertions
+        WebElement maleRadioButtonTextElement = driver.findElement(By.xpath("//*[@for='inlineRadio2']"));
+        maleRadioButtonTextElement.click();
+
+        WebElement femaleRadioButton = driver.findElement(By.id("inlineRadio1"));
+        WebElement maleRadioButton = driver.findElement(By.id("inlineRadio2"));
+        WebElement otherRadioButton = driver.findElement(By.id("inlineRadio3"));
+
+    }
 }
