@@ -44,6 +44,10 @@ public class C01_RadioButton {
 
         ReusableMethods.wait(2);
         maleRadioButton.click();
-
+        //	c. Test if the selected radio button is selected, and the others are not selected
+        Assert.assertTrue(maleRadioButton.isSelected());
+        Assert.assertFalse(femaleRadioButton.isSelected());
+        Assert.assertFalse(otherRadioButton.isSelected());
+        ReusableMethods.wait(2);
     }
 }
