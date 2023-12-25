@@ -67,5 +67,10 @@ public class C01_RadioButton {
         WebElement maleRadioButton = driver.findElement(By.id("inlineRadio2"));
         WebElement otherRadioButton = driver.findElement(By.id("inlineRadio3"));
 
+        //	c. Test if the selected radio button is selected, and the others are not selected
+        Assert.assertTrue(maleRadioButton.isSelected());
+        Assert.assertFalse(femaleRadioButton.isSelected());
+        Assert.assertFalse(otherRadioButton.isSelected());
+        ReusableMethods.wait(2);
     }
 }
