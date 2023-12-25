@@ -43,8 +43,18 @@ public class C06_CheckBox {
         WebElement chestPainTextElement = driver.findElement(By.xpath("//*[@for='gridCheck4']"));
         chestPainTextElement.click();
 
+        //	c. Test if the Back Pain and Chest Pain checkboxes are selected
+        Assert.assertTrue(backPainCheckBox.isSelected());
+        Assert.assertTrue(chestPainCheckBox.isSelected());
 
+        chestPainCheckBox.sendKeys(Keys.PAGE_DOWN);
+        ReusableMethods.wait(3);
+        //	d. Test if the Diabetes and Epilepsy checkboxes are not selected
+        WebElement diabetesCheckBox = driver.findElement(By.id("hastalikCheck2"));
+        WebElement epilepsyCheckBox = driver.findElement(By.id("hastalikCheck7"));
 
+        Assert.assertFalse(diabetesCheckBox.isSelected());
+        Assert.assertFalse(epilepsyCheckBox.isSelected());
 
     }
 }
