@@ -31,5 +31,20 @@ public class C06_CheckBox {
         driver.quit();
     }
 
+    @Test
+    public void checkboxTest(){
+        //	a. Go to the given web page: https://testotomasyonu.com/form
+        driver.get("https://testotomasyonu.com/form");
+        //	b. Select the Back Pain and Chest Pain checkboxes
+        WebElement backPainCheckBox = driver.findElement(By.id("gridCheck5"));
+        backPainCheckBox.click();
 
+        WebElement chestPainCheckBox = driver.findElement(By.id("gridCheck4"));
+        WebElement chestPainTextElement = driver.findElement(By.xpath("//*[@for='gridCheck4']"));
+        chestPainTextElement.click();
+
+
+
+
+    }
 }
