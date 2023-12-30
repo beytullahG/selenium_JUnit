@@ -13,6 +13,8 @@ public class C02_TestBaseFirstTest extends TestBase {
     @Test
     public void searchTest(){
 
+        // Go to the homepage of testotomasyonu.com
+        driver.get("https://www.testotomasyonu.com");
 
     }
 }
