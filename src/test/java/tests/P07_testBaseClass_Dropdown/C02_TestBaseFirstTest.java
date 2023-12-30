@@ -20,5 +20,15 @@ public class C02_TestBaseFirstTest extends TestBase {
         WebElement searchBox = driver.findElement(By.id("global-search"));
         searchBox.sendKeys("phone" + Keys.ENTER);
 
+        // Test if a product can be found in the search results
+        WebElement searchResultElement= driver.findElement(By.className("product-count-text"));
+
+        String searchResultCountStr = searchResultElement.getText().replaceAll("\\D","");
+
+        int searchResultCount = Integer.parseInt(searchResultCountStr);
+
+        Assert.assertTrue(searchResultCount > 0);
+        ReusableMethods.wait(2);
+
     }
 }
