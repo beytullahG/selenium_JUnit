@@ -16,5 +16,9 @@ public class C02_TestBaseFirstTest extends TestBase {
         // Go to the homepage of testotomasyonu.com
         driver.get("https://www.testotomasyonu.com");
 
+        // Search for "phone"
+        WebElement searchBox = driver.findElement(By.id("global-search"));
+        searchBox.sendKeys("phone" + Keys.ENTER);
+
     }
 }
