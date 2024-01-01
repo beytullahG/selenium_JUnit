@@ -5,7 +5,10 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import utilities.ReusableMethods;
 import utilities.TestBase;
+
+import java.util.List;
 
 public class C03_DropdownMenu extends TestBase {
 
@@ -40,6 +43,12 @@ public class C03_DropdownMenu extends TestBase {
         System.out.println("Selected date: "+selectGun.getFirstSelectedOption().getText()+
                 " " + selectAy.getFirstSelectedOption().getText()+
                 " " + selectYil.getFirstSelectedOption().getText());
+
+        //	5. Print all values (value) in the month dropdown menu
+        List<WebElement> monthOptionElementsList = selectAy.getOptions();
+
+        System.out.println(ReusableMethods.convertToStringList(monthOptionElementsList));
+        // [Month, January, February, March, April, May, June, July, August, September, October, November, December]
 
 
     }
