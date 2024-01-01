@@ -33,6 +33,14 @@ public class C03_DropdownMenu extends TestBase {
         Select selectYil = new Select(yearDdm);
         selectYil.selectByVisibleText("1990");
 
+        //  4. Print the selected values to the console
+        //     If you want to print the selection after selecting from the dropdown menu,
+        //     you can use .getFirstSelectedOption().getText()
+
+        System.out.println("Selected date: "+selectGun.getFirstSelectedOption().getText()+
+                " " + selectAy.getFirstSelectedOption().getText()+
+                " " + selectYil.getFirstSelectedOption().getText());
+
 
     }
 }
