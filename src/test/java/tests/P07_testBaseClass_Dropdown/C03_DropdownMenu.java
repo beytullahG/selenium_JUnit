@@ -23,5 +23,16 @@ public class C03_DropdownMenu extends TestBase {
         // - Third step: Perform the desired operations with the created Select object
         selectGun.selectByIndex(5);
 
+        //	2. Select 'April' from the birth date month options using visibleText
+        WebElement monthDdm = driver.findElement(By.xpath("(//select[@class='form-control'])[2]"));
+        Select selectAy = new Select(monthDdm);
+        selectAy.selectByVisibleText("April");
+
+        //	3. Select '1990' from the birth date year options using visibleText
+        WebElement yearDdm = driver.findElement(By.xpath("(//select[@class='form-control'])[3]"));
+        Select selectYil = new Select(yearDdm);
+        selectYil.selectByVisibleText("1990");
+
+
     }
 }
