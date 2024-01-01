@@ -1,6 +1,7 @@
 package tests.P07_testBaseClass_Dropdown;
 
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -50,6 +51,11 @@ public class C03_DropdownMenu extends TestBase {
         System.out.println(ReusableMethods.convertToStringList(monthOptionElementsList));
         // [Month, January, February, March, April, May, June, July, August, September, October, November, December]
 
+        //	6. Test that the size of the Month Dropdown menu is 30
+
+        Assert.assertEquals(30, monthOptionElementsList.size());
+
+        ReusableMethods.wait(2);
 
     }
 }
