@@ -40,6 +40,19 @@ public class C04_DropdownMenu extends TestBase {
         String unexpectedOptionText = "US Dollars";
         String actualOptionText = selectCurrency.getFirstSelectedOption().getText();
         Assert.assertNotEquals(unexpectedOptionText, actualOptionText);
-
+        // Radio button test for U.S. Dollars not being selected
+        WebElement usDollarsRadioButton = driver.findElement(By.id("pc_inDollars_true"));
+        Assert.assertFalse(usDollarsRadioButton.isSelected());
+        //11. Select the "Selected currency" button
+        driver.findElement(By.id("pc_inDollars_false")).click();
+        //12. Click the "Calculate Costs" button and then click the "purchase" button
+        driver.findElement(By.id("pc_calculate_costs")).click();
+        driver.findElement(By.id("purchase_cash")).click();
+        //13. Check if the message "Foreign currency cash was successfully purchased." appears
+        WebElement alertMessageElement = driver.findElement(By.id("alert_content"));
+        String expectedAlertMessage = "Foreign currency cash was successfully purchased.";
+        String actualAlertMessage = alertMessageElement.getText();
+        Assert.assertEquals(expectedAlertMessage, actualAlertMessage);
+        ReusableMethods.wait(3);
     }
 }
