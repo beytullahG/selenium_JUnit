@@ -25,6 +25,15 @@ public class C04_DropdownMenu extends TestBase {
         //5. Click the Sign in button, then go back to the page using the back button
         driver.findElement(By.xpath("//*[@name='submit']")).click();
         driver.navigate().back();
+        //6. Go to the Pay Bills page from the Online Banking menu
+        driver.findElement(By.id("onlineBankingMenu")).click();
+        driver.findElement(By.id("pay_bills_link")).click();
+        //7. Click the "Purchase Foreign Currency" button
+        driver.findElement(By.linkText("Purchase Foreign Currency")).click();
+        //8. Select Eurozone from the "Currency" dropdown menu
+        WebElement currencyDropdown = driver.findElement(By.id("pc_currency"));
+        Select selectCurrency = new Select(currencyDropdown);
+        selectCurrency.selectByValue("EUR");
 
     }
 }
