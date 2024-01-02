@@ -34,6 +34,12 @@ public class C04_DropdownMenu extends TestBase {
         WebElement currencyDropdown = driver.findElement(By.id("pc_currency"));
         Select selectCurrency = new Select(currencyDropdown);
         selectCurrency.selectByValue("EUR");
+        //9. Enter a number into the "amount" box
+        driver.findElement(By.id("pc_amount")).sendKeys("100");
+        //10. Test that "US Dollars" is not selected as the currency
+        String unexpectedOptionText = "US Dollars";
+        String actualOptionText = selectCurrency.getFirstSelectedOption().getText();
+        Assert.assertNotEquals(unexpectedOptionText, actualOptionText);
 
     }
 }
