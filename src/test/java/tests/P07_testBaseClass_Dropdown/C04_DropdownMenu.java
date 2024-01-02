@@ -19,6 +19,12 @@ public class C04_DropdownMenu extends TestBase {
         //3. Type "username" into the login box
         WebElement loginBox = driver.findElement(By.id("user_login"));
         loginBox.sendKeys("username");
+        //4. Type "password" into the password box
+        WebElement passwordBox = driver.findElement(By.id("user_password"));
+        passwordBox.sendKeys("password");
+        //5. Click the Sign in button, then go back to the page using the back button
+        driver.findElement(By.xpath("//*[@name='submit']")).click();
+        driver.navigate().back();
 
     }
 }
