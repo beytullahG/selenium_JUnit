@@ -22,7 +22,15 @@ public class C01_BasicAuthentication extends TestBase {
         //  Password: sunflower
         //
 
+        driver.get("https://membername:sunflower@testotomasyonu.com/basicauth");
+        //4- Verify that the page is successfully accessed
 
+        WebElement successfulLoginTextElement = driver.findElement(By.tagName("h3"));
+
+        String expectedText = "Congratulations! You are logged in as: membername";
+        String actualText = successfulLoginTextElement.getText();
+
+        Assert.assertEquals(expectedText, actualText);
     }
 }
 
