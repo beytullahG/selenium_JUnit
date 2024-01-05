@@ -44,5 +44,23 @@ public class C05_JsAlerts extends TestBase {
         Assert.assertEquals(expectedResultText, actualResultText);
     }
 
-
+    @Test
+    public void jsPromptTest(){
+        // Test 3
+        //   - Go to https://testotomasyonu.com/javascriptAlert
+        driver.get("https://testotomasyonu.com/javascriptAlert");
+        //   - Click on the third alert jsPrompt()
+        driver.findElement(By.xpath("//*[@onclick = 'jsPrompt()']")).click();
+        //   - Enter "Abdullah" in the prompt that appears
+        driver.switchTo().alert().sendKeys("Abdullah");
+        ReusableMethods.wait(5);
+        //   - Click OK to close the alert
+        driver.switchTo().alert().accept();
+        //   - Test that the result text contains "Abdullah"
+        WebElement resultTextElement = driver.findElement(By.xpath("//p[@id='result']"));
+        String expectedResultContent = "Abdullah";
+        String actualResultText = resultTextElement.getText();
+        Assert.assertTrue(actualResultText.contains(expectedResultContent));
+        ReusableMethods.wait(5);
+    }
 }
