@@ -27,5 +27,22 @@ public class C05_JsAlerts extends TestBase {
         driver.switchTo().alert().accept();
     }
 
+    @Test
+    public void jsConfirmAlert(){
+        // Test 2
+        //   - Go to https://testotomasyonu.com/javascriptAlert
+        driver.get("https://testotomasyonu.com/javascriptAlert");
+        //   - Click on the second alert jsConfirm()
+        driver.findElement(By.xpath("//*[@onclick = 'jsConfirm()']")).click();
+        //   - Click on Cancel
+        ReusableMethods.wait(2);
+        driver.switchTo().alert().dismiss();
+        //   - Test that the result text says "You clicked: Cancel"
+        WebElement resultTextElement = driver.findElement(By.xpath("//p[@id='result']"));
+        String expectedResultText = "You clicked: Cancel";
+        String actualResultText = resultTextElement.getText();
+        Assert.assertEquals(expectedResultText, actualResultText);
+    }
+
 
 }
