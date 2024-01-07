@@ -37,6 +37,15 @@ public class C02_IFrame extends TestBase {
 
          */
 
+        WebElement iFrameElement = driver.findElement(By.tagName("iframe"));
+        driver.switchTo().frame(iFrameElement);
+
+        WebElement textBoxElement = driver.findElement(By.tagName("p"));
+        textBoxElement.clear();
+        textBoxElement.sendKeys("Merhaba Dunya");
+        //   - Verify if the text "Elemental Selenium" below the TextBox is visible, and print it in the console.
+
+
     }
 }
 
