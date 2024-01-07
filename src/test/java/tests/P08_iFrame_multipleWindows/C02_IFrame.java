@@ -45,7 +45,16 @@ public class C02_IFrame extends TestBase {
         textBoxElement.sendKeys("Merhaba Dunya");
         //   - Verify if the text "Elemental Selenium" below the TextBox is visible, and print it in the console.
 
+        // driver.switchTo().defaultContent();
+        driver.switchTo().parentFrame();
 
+        WebElement elementalSeleniumElement = driver.findElement(By.xpath("//*[text()='Elemental Selenium']"));
+
+        Assert.assertTrue(elementalSeleniumElement.isDisplayed());
+
+        System.out.println(elementalSeleniumElement.getText());
+
+        ReusableMethods.wait(3);
     }
 }
 
