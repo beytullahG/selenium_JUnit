@@ -25,6 +25,16 @@ public class C03_IFrame extends TestBase {
         List<WebElement> iFrameList = driver.findElements(By.tagName("iframe"));
         System.out.println("Number of iframes on the page: " + iFrameList.size());
 
+        // Click on the play button in the first iframe (YouTube)
+        WebElement playIFrame = driver.findElement(By.xpath("(//iframe)[4]"));
+        driver.switchTo().frame(playIFrame);
 
+        driver.findElement(By.xpath("//button[@title='Play']")).click();
+        ReusableMethods.wait(2);
+
+        // Return to the main page from the first iframe
+        driver.switchTo().defaultContent();
+
+        ReusableMethods.wait(3);
     }
 }
