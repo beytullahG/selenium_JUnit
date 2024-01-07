@@ -17,6 +17,25 @@ public class C02_IFrame extends TestBase {
         //   - Test if the text "An IFrame containing…" is accessible and print it in the console.
         WebElement anIframeTextElement = driver.findElement(By.tagName("h3"));
 
+        Assert.assertTrue(anIframeTextElement.isEnabled());
+        System.out.println(anIframeTextElement.getText());
+        //   - Type "Merhaba Dunya!" into the text box.
+
+        /*
+            The text box is inside an iframe.
+            To access elements inside an iframe:
+            - First, locate the iframe as a WebElement.
+            - Switch to the iframe using switchTo().
+
+            After switching to the iframe:
+            The driver will stay inside the iframe.
+            If you want to perform an action on the main page again,
+            you should switch back to the main page.
+
+            driver.switchTo().parentFrame(); - Switch to the parent iframe if there are nested iframes.
+            driver.switchTo().defaultContent(); - Directly switch to the main page.
+
+         */
 
     }
 }
