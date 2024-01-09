@@ -15,6 +15,12 @@ public class C04_MultipleWindowUsage extends TestBase {
         // Therefore, the driver searches for every action we perform
         // in the same window. If you want, you can create a new tab or window.
 
+        driver.get("https://www.testotomasyonu.com");
+        System.out.println(driver.getWindowHandle());
+
+        driver.get("https://www.wisequarter.com");
+        System.out.println(driver.getWindowHandle());
+
 
     }
 }
