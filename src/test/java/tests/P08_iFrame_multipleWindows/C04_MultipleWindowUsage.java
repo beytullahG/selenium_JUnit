@@ -21,6 +21,14 @@ public class C04_MultipleWindowUsage extends TestBase {
         driver.get("https://www.wisequarter.com");
         System.out.println(driver.getWindowHandle());
 
+        driver.navigate().back();
+        System.out.println(driver.getWindowHandle());
+
+        // We are back on the test automation page.
+        // Let's click on the "Electronics" link.
+
+        driver.findElement(By.xpath("(//a[text()='Electronics'])[3]")).click();
+        System.out.println(driver.getWindowHandle());
 
     }
 }
